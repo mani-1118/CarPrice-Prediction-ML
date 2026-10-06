@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoValue — Used Car Valuation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="#" class="brand">
+                <div class="brand-mark">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <strong>AutoValue</strong>
+                    <small>Smart car valuation</small>
+                </div>
+            </a>
+
+            <nav>
+                <a href="#valuation">Valuation</a>
+                <a href="#how-it-works">How it works</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    AI-powered vehicle valuation
+                </div>
+
+                <h1>
+                    Know what your
+                    <span>car is worth.</span>
+                </h1>
+
+                <p>
+                    Get a quick estimated resale value based on your
+                    vehicle's details and market characteristics.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <strong>Instant</strong>
+                        <span>Price estimation</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <strong>8</strong>
+                        <span>Vehicle factors</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <div class="car-glow"></div>
+
+                <div class="car-card">
+                    <div class="car-card-top">
+                        <span>MARKET VALUE</span>
+                        <span class="live-badge">● LIVE</span>
+                    </div>
+
+                    <div class="car-icon">🚘</div>
+
+                    <div class="car-card-bottom">
+                        <div>
+                            <small>Estimated resale</small>
+                            <strong>₹ 6.42 L</strong>
+                        </div>
+
+                        <div class="trend">
+                            <span>↗</span>
+                            <small>Smart estimate</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Valuation Section -->
+        <section class="valuation-section" id="valuation">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">01 / VEHICLE DETAILS</span>
+                    <h2>Estimate your car's value</h2>
+                </div>
+
+                <p>
+                    Enter the details below to receive an estimated
+                    resale price.
+                </p>
+            </div>
+
+
+            <div class="valuation-layout">
+
+                <!-- Form -->
+                <div class="form-card">
+
+                    <form id="predictionForm">
+
+                        <div class="form-grid">
+
+                            <!-- Car name -->
+                            <div class="field field-full">
+                                <label for="carName">Car name</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🚗</span>
+                                    <input
+                                        type="text"
+                                        id="carName"
+                                        placeholder="e.g. City, Swift, Innova"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+
+                            <!-- Year -->
+                            <div class="field">
+                                <label for="year">Manufacturing year</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">◷</span>
+                                    <input
+                                        type="number"
+                                        id="year"
+                                        min="1990"
+                                        max="2026"
+                                        placeholder="e.g. 2018"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+
+                            <!-- Present Price -->
+                            <div class="field">
+                                <label for="presentPrice">
+                                    Original price
+                                    <span class="unit">₹ Lakhs</span>
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <span class="input-icon">₹</span>
+                                    <input
+                                        type="number"
+                                        id="presentPrice"
+                                        min="0"
+                                        step="0.01"
+                                        placeholder="e.g. 8.50"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+
+                            <!-- Kilometers -->
+                            <div class="field">
+                                <label for="kmsDriven">Kilometers driven</label>
+
+                                <div class="input-wrapper">
+                                    <span class="input-icon">⌁</span>
+                                    <input
+                                        type="number"
+                                        id="kmsDriven"
+                                        min="0"
+                                        placeholder="e.g. 45000"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+
+                            <!-- Fuel -->
+                            <div class="field">
+                                <label for="fuelType">Fuel type</label>
+
+                                <div class="select-wrapper">
+                                    <select id="fuelType" required>
+                                        <option value="" disabled selected>
+                                            Select fuel
+                                        </option>
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="CNG">CNG</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <!-- Seller -->
+                            <div class="field">
+                                <label for="sellerType">Seller type</label>
+
+                                <div class="select-wrapper">
+                                    <select id="sellerType" required>
+                                        <option value="" disabled selected>
+                                            Select seller
+                                        </option>
+                                        <option value="Dealer">Dealer</option>
+                                        <option value="Individual">Individual</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <!-- Transmission -->
+                            <div class="field">
+                                <label for="transmission">Transmission</label>
+
+                                <div class="select-wrapper">
+                                    <select id="transmission" required>
+                                        <option value="" disabled selected>
+                                            Select transmission
+                                        </option>
+                                        <option value="Manual">Manual</option>
+                                        <option value="Automatic">Automatic</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <!-- Owner -->
+                            <div class="field">
+                                <label for="owner">Previous owners</label>
+
+                                <div class="select-wrapper">
+                                    <select id="owner" required>
+                                        <option value="" disabled selected>
+                                            Select ownership
+                                        </option>
+                                        <option value="0">First owner</option>
+                                        <option value="1">Second owner</option>
+                                        <option value="2">Third owner</option>
+                                        <option value="3">Fourth+ owner</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" class="predict-button" id="predictButton">
+                            <span class="button-text">Estimate car value</span>
+                            <span class="button-arrow">→</span>
+                        </button>
+
+                        <p class="form-note">
+                            Your information is used only to generate the estimate.
+                        </p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- Result -->
+                <aside class="result-card" id="resultCard">
+
+                    <div class="result-empty" id="emptyResult">
+
+                        <div class="result-symbol">₹</div>
+
+                        <span class="section-label">YOUR ESTIMATE</span>
+
+                        <h3>Your estimated value<br>will appear here.</h3>
+
+                        <p>
+                            Complete the vehicle details and click
+                            <strong>Estimate car value</strong>.
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-success" id="successResult">
+
+                        <div class="result-top">
+                            <span class="section-label">ESTIMATED RESALE VALUE</span>
+                            <span class="success-icon">✓</span>
+                        </div>
+
+                        <div class="price">
+                            <span>₹</span>
+                            <strong id="predictedPrice">0.00</strong>
+                            <small>Lakhs</small>
+                        </div>
+
+                        <div class="result-divider"></div>
+
+                        <div class="vehicle-summary">
+
+                            <div>
+                                <span>Vehicle</span>
+                                <strong id="resultCarName">—</strong>
+                            </div>
+
+                            <div>
+                                <span>Year</span>
+                                <strong id="resultYear">—</strong>
+                            </div>
+
+                            <div>
+                                <span>Distance</span>
+                                <strong id="resultKms">—</strong>
+                            </div>
+
+                            <div>
+                                <span>Transmission</span>
+                                <strong id="resultTransmission">—</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="ai-advisor">
+    <div class="ai-advisor-title">
+        <span>✦</span>
+        <strong>AI Car Advisor</strong>
+    </div>
+
+    <p id="aiAdvice">
+        Generating personalized advice...
+    </p>
+</div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- How it works -->
+        <section class="how-section" id="how-it-works">
+
+            <div class="section-heading centered">
+                <span class="section-label">02 / HOW IT WORKS</span>
+                <h2>From car details to valuation.</h2>
+                <p>
+                    A simple process to estimate your car's resale value.
+                </p>
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+                    <span>01</span>
+                    <h3>Enter details</h3>
+                    <p>
+                        Provide basic information about the vehicle,
+                        such as age, price and kilometres driven.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <span>02</span>
+                    <h3>Value analysis</h3>
+                    <p>Your vehicle details are analysed to estimate
+                    its resale value.</p>
+                </div>
+
+                <div class="step">
+                    <span>03</span>
+                    <h3>Get your estimate</h3>
+                    <p>
+                        Receive an estimated resale value instantly
+                        through the application.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <strong>AutoValue</strong>
+            <span>Smart used-car valuation</span>
+        </div>
+
+        <p>Smart used-car price estimation</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
