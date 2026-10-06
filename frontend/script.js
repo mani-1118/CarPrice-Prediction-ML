@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:5000/predict";
+const API_URL = "https://carprice-prediction-ml.onrender.com/predict";
 
 const form = document.getElementById("predictionForm");
 const button = document.getElementById("predictButton");
@@ -90,7 +90,7 @@ form.addEventListener("submit", async function (event) {
 aiAdvice.textContent = "Generating personalized advice...";
 
 try {
-    const aiResponse = await fetch("http://127.0.0.1:5000/ai-advice", {
+    const aiResponse = await fetch("https://carprice-prediction-ml.onrender.com/ai-advice", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
